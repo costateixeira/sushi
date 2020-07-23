@@ -74,7 +74,7 @@ const printer = printf(info => {
 
 export const logger = createLogger({
   format: combine(incrementCounts(), withLocation(), printer),
-  transports: [new transports.Console()]
+  transports: [new transports.Console(), new transports.Stream()]
 });
 
 class LoggerStats {
